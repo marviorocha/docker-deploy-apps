@@ -49,3 +49,5 @@ services:
     image: redis
     labels:
      - traefik.enable=false
+    networks:
+     - web
