@@ -22,8 +22,10 @@ Docker and docker-compose installed on your server
  3. Open your docker-compose.yml settings it.
  4. Open your shell make it:
 
-`docker-compose -f docker-traefik.yml up -d --build
-     docker-compose up -d --build `
+- Settings the traefik:
+`docker-compose -f docker-traefik.yml up -d --build´
+- Deploy wordpress:
+`docker-compose up -d --build´
 
 My site: [marviorocha.com](https://www.marviorocha.com)
 Thanks.
