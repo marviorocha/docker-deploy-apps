@@ -2,7 +2,7 @@
 
 Hello, My name's Marvio Rocha, I'm a simple developer from Brazil than love  docker and docker-compose. This is a simple docker-compose script for build a production deployment with docker.
 
-I make it with a person WordPress installer. But you can put other applications run join.
+I make it with a person WordPress installer. But you can put other applications run to join.
 
 That was based on great tutorial the -> [Niels, Enabling HTTPS termination in Traefik](https://niels.nu/blog/2017/traefik-https-letsencrypt.html))
 #### Prerequisites
