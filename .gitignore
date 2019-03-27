@@ -1,1 +1,3 @@
 traefik-bk.toml
+mysql/*
+wordpress/*
