@@ -23,9 +23,9 @@ Docker and docker-compose installed on your server
  4. Open your shell make it:
 
 - Settings the traefik:
-`docker-compose -f docker-traefik.yml up -d --build `
-- Deploy wordpress:
-`docker-compose up -d --build `
+`Go to folder traefik settings your docker-compose.yml and up docker with docker-compose up -d `
+- Deploy LEMP:
+`Go to folder site 1 end settings your docker-compose.yml and up with docker-compose up -d`
 
 My site: [marviorocha.com](https://www.marviorocha.com)
 Thanks.
