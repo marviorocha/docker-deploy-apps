@@ -1,0 +1,49 @@
+version: "3.7"
+
+services:
+  blog:
+    image: webdevops/php-nginx:7.3 
+    restart: always
+    volumes:
+      - ./web:/app
+      - ./config/vhost.conf:/opt/docker/etc/nginx/vhost.conf
+    env_file:
+      - ./config/php.env
+    labels:
+      - 'traefik.frontend.rule=Host:site.stationpro.ml'
+      - "traefik.docker.network=traefik_default"
+      - 'traefik.port=80'
+    depends_on:
+      - mysql
+    networks:
+      - web
+  mysql:
+    image: mysql:5.7
+    restart: always
+    labels:
+      - "traefik.enable=false"
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    networks: 
+      - web
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+    labels:
+      - traefik.backend=phpmyadmin
+      - traefik.frontend.rule=Host:admin.stationpro.ml
+    networks:
+      - web
+    depends_on:
+      - mysql
+volumes:
+    db-data:
+networks:
+  web:
+    external:
+      name: traefik_default
+

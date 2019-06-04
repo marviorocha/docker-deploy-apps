@@ -1,0 +1,31 @@
+defaultEntryPoints = ["http", "https"]
+
+[web]
+ address = ":8080"
+[entryPoints.web.auth]
+[entryPoints.web.auth.basic]
+  users = ["admin:$apr1$BipzeZ91$bSbegk.Kuro.pyMiUMOVo1"]
+[entryPoints]
+
+[entryPoints.http]
+address = ":80"
+#[entryPoints.http.redirect]
+#entryPoint = "https"
+
+[entryPoints.https]
+address = ":443"
+
+[entryPoints.https.tls]
+
+[acme]
+email = "marviorocha@marviorocha.com"
+storage = "acme.json"
+entryPoint = "https"
+onDemand = false
+OnHostRule = true
+
+[docker]
+domain = "stationpro.ml"
+watch = true
+network = "web"
+swarmMode = true

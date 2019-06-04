@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  traefik:
+    build: .
+    restart: always
+    command: --web --docker --logLevel=DEBUG
+    ports:
+      - "80:80"
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.backend=monitor"
+      - "traefik.frontend.rule=Host: monitor.stationpro.ml"
+      - "traefik.docker.network=web"
+      - "traefik.port=8080"
+networks:
+  web:
+ 
