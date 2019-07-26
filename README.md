@@ -4,6 +4,10 @@ Hello, My name's Marvio Rocha, I'm a simple developer from Brazil than love  doc
 
 I make it with a person WordPress installer. But you can put other applications run to join.
 
+## Clone branch portainer
+
+`git clone -b portainer https://github.com/marviorocha/docker-deploy-apps.git `
+
 
 Docker and docker-compose installed on your server
 
